@@ -1,2 +1,3 @@
 # Prehrajto_Player
-**Clone with --recursive**
+**Naklonuj s --recursive**
+![Hlavní stránka](/Preview/image1.png)
