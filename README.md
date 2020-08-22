@@ -2,10 +2,12 @@
 **Naklonuj s --recursive**  
 **Clone with --recursive**&nbsp;
 -------------------------------------
+<h6>
 Vyber x86 architekturu pro sestavení a extrahuj VLC Knihovny ve složce   
-_/bin/x86/Debug_ nebo _/bin/x86/Release_!**  
+_/bin/x86/Debug_ nebo _/bin/x86/Release_!  
 Choose x86 architecture to build and extract VLC Libraris inside directory   
 _/bin/x86/Debug_ or _/bin/x86/Release_!&nbsp;
+</h6>
 -------------------------------------
 ![Hlavní stránka](/Preview/image1.png)&nbsp;
 -------------------------------------
