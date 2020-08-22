@@ -1,5 +1,5 @@
 # Prehrajto_Player
-**Naklonuj s --recursive**&nbsp;
+**Naklonuj s --recursive**  
 **Clone with --recursive**&nbsp;
 -------------------------------------
 **Vyber x86 architekturu pro sestavení!**
