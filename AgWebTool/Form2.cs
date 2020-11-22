@@ -18,15 +18,55 @@ namespace AgWebTool
         public Form2(Form1 form)
         {
             this.MainForm = form;
+
             InitializeComponent();
+
+            switch (MainForm.strTheme)
+            {
+                case "None":
+                    break;
+                case "Red":
+                    button1.BackColor = Color.FromArgb(255, 66, 88);
+                    button2.BackColor = Color.FromArgb(255, 66, 88);
+                    panel1.BackColor = Color.FromArgb(35, 20, 70);
+                    panel2.BackColor = Color.FromArgb(255, 66, 88);
+                    label1.BackColor = Color.FromArgb(35, 20, 70);
+                    label4.BackColor = Color.FromArgb(35, 20, 70);
+                    label5.BackColor = Color.FromArgb(35, 20, 70);
+                    trackBar1.BackColor = Color.FromArgb(35, 20, 70);
+                    trackBar2.BackColor = Color.FromArgb(35, 20, 70);
+                    break;
+                case "Green":
+                    button1.BackColor = Color.Teal;
+                    button2.BackColor = Color.Teal;
+                    panel1.BackColor = Color.FromArgb(15, 40, 50);
+                    panel2.BackColor = Color.Teal;
+                    label1.BackColor = Color.FromArgb(15, 40, 50);
+                    label4.BackColor = Color.FromArgb(15, 40, 50);
+                    label5.BackColor = Color.FromArgb(15, 40, 50);
+                    trackBar1.BackColor = Color.FromArgb(15, 40, 50);
+                    trackBar2.BackColor = Color.FromArgb(15, 40, 50);
+                    break;
+                default:
+                    break;
+            }
+
+            this.Opacity = 0.75;
             label1.Text = MainForm.nVolume.ToString();
             trackBar1.Value = MainForm.nVolume;
             SetFeatureToAllControls(this.Controls);
             trackBar2.Maximum = (int)MainForm.nMaxVideoLength;
             if (MainForm.bPause)
-                button1.Text = "Konec pauzy";
+                button1.Text = "⏯️";
             else
-                button1.Text = "Pauza";
+                button1.Text = "⏸";
+
+            foreach (Control cc in Controls)
+            {
+                cc.MouseDown += new MouseEventHandler(OnMouseDown);
+                cc.MouseUp += new MouseEventHandler(OnMouseUp);
+                cc.MouseMove += new MouseEventHandler(OnMouseMove);
+            }
         }
 
         public Form2()
@@ -38,19 +78,19 @@ namespace AgWebTool
         private Point _formLocation;
         private bool _capture;
 
-        protected override void OnMouseDown(MouseEventArgs e)
+        protected void OnMouseDown(object o, MouseEventArgs e)
         {
             _capture = true;
             _mouseDown = e.Location;
             _formLocation = ((Form)TopLevelControl).Location;
         }
 
-        protected override void OnMouseUp(MouseEventArgs e)
+        protected void OnMouseUp(object o, MouseEventArgs e)
         {
             _capture = false;
         }
 
-        protected override void OnMouseMove(MouseEventArgs e)
+        protected void OnMouseMove(object o, MouseEventArgs e)
         {
             if (_capture)
             {
