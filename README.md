@@ -4,7 +4,7 @@
 -------------------------------------
 Vyber x86 architekturu pro sestavení a extrahuj VLC Knihovny ve složce   
 ```/bin/x86/Debug``` nebo ```/bin/x86/Release```  
-Choose x86 architecture for build and extract VLC Libraris inside directory   
+Choose x86 architecture for build and extract VLC Libraries inside directory   
 ```/bin/x86/Debug``` or ```/bin/x86/Release```  
 [Release if you dont want to compile this source code](/Preview/Release.rar) 
 -------------------------------------
